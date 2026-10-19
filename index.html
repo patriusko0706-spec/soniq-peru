@@ -1,79 +1,921 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a1223">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080f1e">
 <meta name="description" content="SONIQ Perú S.A.C. — auriculares inalámbricos, tecnología accesible y una experiencia de compra sencilla.">
 <title>SONIQ Perú S.A.C. | Conecta con tu música</title>
+
 <style>
-:root{--bg:#080f1e;--panel:#111e35;--blue:#00aaff;--cyan:#49e0ff;--white:#f5f8fc;--muted:#b1bfd3;--line:#263e5f;--green:#48dca0;--orange:#ffb547}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.topline{height:4px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
-header{position:sticky;top:0;z-index:10;background:#080f1eeF;backdrop-filter:blur(14px);border-bottom:1px solid #49e0ff20}nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.07em}.brandmark{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,var(--blue),#1761d8)}.brandmark svg{width:24px}.brand small{display:block;color:var(--muted);font-size:.64rem;letter-spacing:.12em}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.9rem}.navlinks a:hover{color:var(--cyan)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:12px 18px;font-weight:800;border:1px solid transparent;cursor:pointer}.btn-primary{background:linear-gradient(110deg,var(--blue),#2876f0);color:#061021}.btn-ghost{border-color:var(--line);background:#101c32}.menu-btn{display:none;background:transparent;color:white;border:1px solid var(--line);border-radius:10px;padding:8px 11px}
-.hero{padding:82px 0 72px;background:radial-gradient(ellipse at 78% 35%,#063e6b60,transparent 36%),radial-gradient(ellipse at 20% 5%,#10335a60,transparent 36%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #49e0ff40;background:#49e0ff0c;color:var(--cyan);border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--green);border-radius:50%}h1{font-size:clamp(2.8rem,6vw,5.5rem);line-height:.99;letter-spacing:-.055em;margin:24px 0}h1 span{display:block;color:var(--cyan)}.lead{font-size:1.12rem;max-width:560px;color:var(--muted)}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.hero-stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:36px}.stat strong{display:block;font-size:1.35rem}.stat span{font-size:.82rem;color:var(--muted)}
-.product-stage{min-height:390px;position:relative;display:grid;place-items:center}.orb{position:absolute;width:min(370px,90%);aspect-ratio:1;border-radius:50%;border:1px solid #49e0ff26;background:radial-gradient(circle at 40% 35%,#0d7fbd38,transparent 65%);box-shadow:inset 0 0 80px #00aaff0c}.product-card{position:relative;width:min(360px,90%);padding:25px;border-radius:28px;border:1px solid #49e0ff28;background:linear-gradient(145deg,#162943e8,#0c172be8);box-shadow:0 28px 90px #0008;transform:rotate(-3deg)}.tag{font-size:.75rem;color:var(--cyan);letter-spacing:.12em;font-weight:850}.earbuds{height:220px;display:flex;align-items:center;justify-content:center;gap:25px}.earbud{position:relative;width:75px;height:112px;border-radius:42px 42px 35px 35px;background:linear-gradient(120deg,#f6fbff,#9baec4 48%,#34465e 85%);box-shadow:inset -9px -5px 12px #17253c80,inset 5px 5px 10px #fff9,0 16px 24px #0007;transform:rotate(-20deg)}.earbud:before{content:"";position:absolute;width:25px;height:69px;left:25px;top:78px;border-radius:0 0 18px 18px;background:linear-gradient(90deg,#cbd8e7,#52677f 70%,#d8e2ec)}.earbud:after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:#263a52;top:24px;left:27px;border:5px solid #dbe7f2}.earbud.right{transform:rotate(20deg) scaleX(-1);height:103px;margin-top:-32px}.product-bottom{display:flex;align-items:end;justify-content:space-between;gap:12px}.product-bottom h3{margin:4px 0 0;font-size:1.3rem}.price{font-weight:900;color:var(--cyan)}.stage-note{position:absolute;right:0;bottom:8px;background:#101c32;border:1px solid var(--line);padding:12px 16px;border-radius:13px;color:var(--muted);font-size:.82rem}
-section{padding:74px 0}.section-head{max-width:700px;margin-bottom:30px}.kicker{color:var(--cyan);font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.035em;margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}.features,.product-grid,.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature,.product,.team-card,.info-card,.step{background:linear-gradient(145deg,var(--panel),#0d192d);border:1px solid var(--line);border-radius:20px}.feature{padding:24px}.iconbox{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#00aaff17;color:var(--cyan);font-size:1.4rem;margin-bottom:16px}.feature h3,.product h3,.info-card h3{margin:0 0 8px;font-size:1.12rem}.feature p,.product p,.info-card p{margin:0;color:var(--muted);font-size:.94rem}.products,.team{background:#0a1426}.product{padding:0;overflow:hidden}.product-art{height:175px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#0d76a955,transparent 60%),#101f36}.mini-buds{display:flex;gap:22px;align-items:center}.mini-bud{width:43px;height:67px;border-radius:26px 26px 18px 18px;background:linear-gradient(130deg,#f4f7fb,#7388a2 75%);box-shadow:0 12px 22px #0007;position:relative;transform:rotate(-22deg)}.mini-bud:before{content:"";position:absolute;width:14px;height:43px;top:48px;left:15px;border-radius:0 0 8px 8px;background:linear-gradient(90deg,#c7d2df,#50647c)}.mini-bud:after{content:"";position:absolute;top:14px;left:14px;width:15px;height:15px;border-radius:50%;background:#23364e;border:3px solid #dce7f2}.product-content{padding:22px}.product-label{font-size:.72rem;color:var(--cyan);font-weight:850;text-transform:uppercase;letter-spacing:.1em}.product h3{margin-top:7px}.product-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:8px}.product-foot strong{font-size:1.2rem}.pill{font-size:.73rem;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 9px}.note{margin-top:18px;color:var(--orange);font-size:.84rem}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-card{padding:28px}.big-icon{font-size:1.5rem;color:var(--cyan);font-weight:800;margin-bottom:15px}.info-card p{font-size:1rem}.values{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.values span{border:1px solid var(--line);padding:7px 11px;border-radius:999px;color:var(--muted);font-size:.84rem}.team-card{display:flex;gap:14px;align-items:flex-start;padding:19px}.avatar{flex:0 0 47px;width:47px;height:47px;border-radius:15px;display:grid;place-items:center;background:#00aaff20;border:1px solid #49e0ff35;color:var(--cyan);font-weight:900}.team-card h3{font-size:.96rem;line-height:1.3;margin:1px 0 7px}.team-card p{font-size:.84rem;color:var(--muted);margin:0}
-.finance-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}.capital{padding:30px;border-radius:22px;background:linear-gradient(145deg,#07538a,#123a70);border:1px solid #49e0ff40}.capital small{color:#c5f4ff;font-weight:750;letter-spacing:.1em}.amount{font-size:clamp(2.8rem,6vw,4rem);font-weight:950;letter-spacing:-.05em;margin:8px 0}.capital p{color:#d5eaff;margin:0}.budget-row{margin-bottom:22px}.budget-label{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:.92rem}.budget-label span:last-child{font-weight:850}.track{height:10px;background:#1d2c44;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.projection{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}.metric{padding:21px;border:1px solid var(--line);background:var(--panel);border-radius:17px}.metric span{color:var(--muted);font-size:.84rem}.metric strong{display:block;font-size:1.55rem;margin-top:6px}.metric em{font-size:.77rem;color:var(--green);font-style:normal}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:steps}.step{padding:23px;counter-increment:steps}.step:before{content:"0" counter(steps);display:block;color:var(--cyan);font-weight:900;font-size:1.3rem;margin-bottom:15px}.step h3{margin:0 0 8px;font-size:1.05rem}.step p{margin:0;color:var(--muted);font-size:.9rem}.cta{padding:50px 0}.cta-box{border:1px solid #49e0ff3d;border-radius:26px;padding:36px;background:radial-gradient(ellipse at 85% 20%,#0077bd38,transparent 38%),linear-gradient(120deg,#101e35,#0c172a);display:flex;justify-content:space-between;align-items:center;gap:24px}.cta-box h2{margin-top:0}.cta-box p{color:var(--muted);margin-bottom:0}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.84rem}.footer-row{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.disclaimer{font-size:.78rem;color:#8fa2bb;max-width:760px;margin-top:10px}.reveal{opacity:0;transform:translateY(15px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:850px){.hero-grid,.finance-grid{grid-template-columns:1fr}.product-stage{min-height:350px}.features,.product-grid,.team-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.navlinks{gap:13px}}
-@media(max-width:600px){.wrap{width:calc(100% - 28px)}nav{min-height:65px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;padding:18px 22px;background:#0b1527;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:6px 0}.nav-cta{display:none}.hero{padding:45px 0}.hero-grid{gap:10px}h1{font-size:3.15rem}.hero-stats{gap:20px}.product-stage{min-height:320px}section{padding:55px 0}.features,.product-grid,.about-grid,.team-grid,.steps,.projection{grid-template-columns:1fr}.cta-box{padding:25px;display:block}.cta-box .btn{margin-top:20px}.stage-note{font-size:.74rem;bottom:0}.product-bottom h3{font-size:1.1rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+:root {
+  --bg:#080f1e;
+  --panel:#111e35;
+  --blue:#00aaff;
+  --cyan:#49e0ff;
+  --white:#f5f8fc;
+  --muted:#b1bfd3;
+  --line:#263e5f;
+  --green:#48dca0;
+  --orange:#ffb547;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.6;
+}
+
+a { color:inherit; text-decoration:none; }
+button { font:inherit; cursor:pointer; }
+.wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+
+.topline {
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#080f1ef2;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #49e0ff20;
+}
+
+nav {
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:900;
+  letter-spacing:.07em;
+}
+
+.brandmark {
+  width:39px;
+  height:39px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,var(--blue),#1761d8);
+}
+
+.brandmark svg { width:24px; }
+
+.brand small {
+  display:block;
+  color:var(--muted);
+  font-size:.64rem;
+  letter-spacing:.12em;
+}
+
+.navlinks {
+  display:flex;
+  gap:24px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.navlinks a:hover { color:var(--cyan); }
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  border-radius:12px;
+  padding:12px 18px;
+  font-weight:800;
+  border:1px solid transparent;
+  transition:transform .2s,background .2s;
+}
+
+.btn:hover { transform:translateY(-2px); }
+
+.btn-primary {
+  background:linear-gradient(110deg,var(--blue),#2876f0);
+  color:#061021;
+}
+
+.btn-ghost {
+  border-color:var(--line);
+  background:#101c32;
+}
+
+.menu-btn {
+  display:none;
+  background:transparent;
+  color:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 11px;
+}
+
+.hero {
+  padding:82px 0 72px;
+  background:
+    radial-gradient(ellipse at 78% 35%,#063e6b60,transparent 36%),
+    radial-gradient(ellipse at 20% 5%,#10335a60,transparent 36%);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:48px;
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border:1px solid #49e0ff40;
+  background:#49e0ff0c;
+  color:var(--cyan);
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.dot {
+  width:7px;
+  height:7px;
+  background:var(--green);
+  border-radius:50%;
+}
+
+h1 {
+  font-size:clamp(2.8rem,6vw,5.5rem);
+  line-height:.99;
+  letter-spacing:-.055em;
+  margin:24px 0;
+}
+
+h1 span {
+  display:block;
+  color:var(--cyan);
+}
+
+.lead {
+  font-size:1.12rem;
+  max-width:560px;
+  color:var(--muted);
+}
+
+.hero-actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:28px 0;
+}
+
+.hero-stats {
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-top:36px;
+}
+
+.stat strong {
+  display:block;
+  font-size:1.35rem;
+}
+
+.stat span {
+  font-size:.82rem;
+  color:var(--muted);
+}
+
+.product-stage {
+  min-height:390px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+
+.orb {
+  position:absolute;
+  width:min(370px,90%);
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid #49e0ff26;
+  background:radial-gradient(circle at 40% 35%,#0d7fbd38,transparent 65%);
+  box-shadow:inset 0 0 80px #00aaff0c;
+}
+
+.product-card {
+  position:relative;
+  width:min(360px,90%);
+  padding:25px;
+  border-radius:28px;
+  border:1px solid #49e0ff28;
+  background:linear-gradient(145deg,#162943e8,#0c172be8);
+  box-shadow:0 28px 90px #0008;
+  transform:rotate(-3deg);
+}
+
+.tag {
+  font-size:.75rem;
+  color:var(--cyan);
+  letter-spacing:.12em;
+  font-weight:850;
+}
+
+.earbuds {
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+}
+
+.earbud {
+  position:relative;
+  width:75px;
+  height:112px;
+  border-radius:42px 42px 35px 35px;
+  background:linear-gradient(120deg,#f6fbff,#9baec4 48%,#34465e 85%);
+  box-shadow:inset -9px -5px 12px #17253c80,
+    inset 5px 5px 10px #fff9,0 16px 24px #0007;
+  transform:rotate(-20deg);
+}
+
+.earbud:before {
+  content:"";
+  position:absolute;
+  width:25px;
+  height:69px;
+  left:25px;
+  top:78px;
+  border-radius:0 0 18px 18px;
+  background:linear-gradient(90deg,#cbd8e7,#52677f 70%,#d8e2ec);
+}
+
+.earbud:after {
+  content:"";
+  position:absolute;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#263a52;
+  top:24px;
+  left:27px;
+  border:5px solid #dbe7f2;
+}
+
+.earbud.right {
+  transform:rotate(20deg) scaleX(-1);
+  height:103px;
+  margin-top:-32px;
+}
+
+.product-bottom {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.product-bottom h3 {
+  margin:4px 0 0;
+  font-size:1.3rem;
+}
+
+.price {
+  font-weight:900;
+  color:var(--cyan);
+}
+
+.stage-note {
+  position:absolute;
+  right:0;
+  bottom:8px;
+  background:#101c32;
+  border:1px solid var(--line);
+  padding:12px 16px;
+  border-radius:13px;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+section { padding:74px 0; }
+
+.section-head {
+  max-width:700px;
+  margin-bottom:30px;
+}
+
+.kicker {
+  color:var(--cyan);
+  font-size:.78rem;
+  font-weight:850;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+h2 {
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
+  margin:10px 0 14px;
+}
+
+.section-head p {
+  color:var(--muted);
+  margin:0;
+}
+
+.features,.product-grid,.team-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature,.product,.team-card,.info-card,.step {
+  background:linear-gradient(145deg,var(--panel),#0d192d);
+  border:1px solid var(--line);
+  border-radius:20px;
+}
+
+.feature { padding:24px; }
+
+.iconbox {
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:#00aaff17;
+  color:var(--cyan);
+  font-size:1.4rem;
+  margin-bottom:16px;
+}
+
+.feature h3,.product h3,.info-card h3 {
+  margin:0 0 8px;
+  font-size:1.12rem;
+}
+
+.feature p,.product p,.info-card p {
+  margin:0;
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.products,.team { background:#0a1426; }
+
+.product {
+  padding:0;
+  overflow:hidden;
+}
+
+.product-art {
+  height:175px;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at 50% 40%,#0d76a955,transparent 60%),#101f36;
+}
+
+.mini-buds {
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+.mini-bud {
+  width:43px;
+  height:67px;
+  border-radius:26px 26px 18px 18px;
+  background:linear-gradient(130deg,#f4f7fb,#7388a2 75%);
+  box-shadow:0 12px 22px #0007;
+  position:relative;
+  transform:rotate(-22deg);
+}
+
+.mini-bud:before {
+  content:"";
+  position:absolute;
+  width:14px;
+  height:43px;
+  top:48px;
+  left:15px;
+  border-radius:0 0 8px 8px;
+  background:linear-gradient(90deg,#c7d2df,#50647c);
+}
+
+.mini-bud:after {
+  content:"";
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#23364e;
+  border:3px solid #dce7f2;
+}
+
+.product-content { padding:22px; }
+
+.product-label {
+  font-size:.72rem;
+  color:var(--cyan);
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.product h3 { margin-top:7px; }
+
+.product-foot {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:18px;
+  gap:8px;
+}
+
+.product-foot strong { font-size:1.2rem; }
+
+.pill {
+  font-size:.73rem;
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:99px;
+  padding:5px 9px;
+}
+
+.note {
+  margin-top:18px;
+  color:var(--orange);
+  font-size:.84rem;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.info-card { padding:28px; }
+
+.big-icon {
+  font-size:1.5rem;
+  color:var(--cyan);
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.info-card p { font-size:1rem; }
+
+.values {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.values span {
+  border:1px solid var(--line);
+  padding:7px 11px;
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+.team-card {
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:19px;
+}
+
+.avatar {
+  flex:0 0 47px;
+  width:47px;
+  height:47px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  background:#00aaff20;
+  border:1px solid #49e0ff35;
+  color:var(--cyan);
+  font-weight:900;
+}
+
+.team-card h3 {
+  font-size:.96rem;
+  line-height:1.3;
+  margin:1px 0 7px;
+}
+
+.team-card p {
+  font-size:.84rem;
+  color:var(--muted);
+  margin:0;
+}
+
+.finance-grid {
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.capital {
+  padding:30px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#07538a,#123a70);
+  border:1px solid #49e0ff40;
+}
+
+.capital small {
+  color:#c5f4ff;
+  font-weight:750;
+  letter-spacing:.1em;
+}
+
+.amount {
+  font-size:clamp(2.8rem,6vw,4rem);
+  font-weight:950;
+  letter-spacing:-.05em;
+  margin:8px 0;
+}
+
+.capital p { color:#d5eaff; margin:0; }
+
+.budget-row { margin-bottom:22px; }
+
+.budget-label {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+  font-size:.92rem;
+}
+
+.budget-label span:last-child { font-weight:850; }
+
+.track {
+  height:10px;
+  background:#1d2c44;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.fill {
+  height:100%;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+}
+
+.projection {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:28px;
+}
+
+.metric {
+  padding:21px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:17px;
+}
+
+.metric span {
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+.metric strong {
+  display:block;
+  font-size:1.55rem;
+  margin-top:6px;
+}
+
+.metric em {
+  font-size:.77rem;
+  color:var(--green);
+  font-style:normal;
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  counter-reset:steps;
+}
+
+.step {
+  padding:23px;
+  counter-increment:steps;
+}
+
+.step:before {
+  content:"0" counter(steps);
+  display:block;
+  color:var(--cyan);
+  font-weight:900;
+  font-size:1.3rem;
+  margin-bottom:15px;
+}
+
+.step h3 { margin:0 0 8px; font-size:1.05rem; }
+.step p { margin:0; color:var(--muted); font-size:.9rem; }
+
+.cta { padding:50px 0; }
+
+.cta-box {
+  border:1px solid #49e0ff3d;
+  border-radius:26px;
+  padding:36px;
+  background:
+    radial-gradient(ellipse at 85% 20%,#0077bd38,transparent 38%),
+    linear-gradient(120deg,#101e35,#0c172a);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.cta-box h2 { margin-top:0; }
+.cta-box p { color:var(--muted); margin-bottom:0; }
+
+footer {
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+.footer-row {
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.disclaimer {
+  font-size:.78rem;
+  color:#8fa2bb;
+  max-width:760px;
+  margin-top:10px;
+}
+
+/* CORRECCIÓN: el contenido permanece visible aunque falle JavaScript. */
+.reveal {
+  opacity:1;
+  transform:none;
+  transition:opacity .5s,transform .5s;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:none;
+}
+
+@media(max-width:850px) {
+  .hero-grid,.finance-grid { grid-template-columns:1fr; }
+  .product-stage { min-height:350px; }
+  .features,.product-grid,.team-grid { grid-template-columns:repeat(2,1fr); }
+  .steps { grid-template-columns:repeat(2,1fr); }
+  .navlinks { gap:13px; }
+}
+
+@media(max-width:600px) {
+  .wrap { width:calc(100% - 28px); }
+  nav { min-height:65px; }
+  .menu-btn { display:block; }
+  .navlinks {
+    display:none;
+    position:absolute;
+    top:65px;
+    left:0;
+    right:0;
+    padding:18px 22px;
+    background:#0b1527;
+    border-bottom:1px solid var(--line);
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .navlinks.open { display:flex; }
+  .navlinks a { padding:6px 0; }
+  .nav-cta { display:none; }
+  .hero { padding:45px 0; }
+  .hero-grid { gap:10px; }
+  h1 { font-size:3.15rem; }
+  .hero-stats { gap:20px; }
+  .product-stage { min-height:320px; }
+  section { padding:55px 0; }
+  .features,.product-grid,.about-grid,.team-grid,.steps,.projection {
+    grid-template-columns:1fr;
+  }
+  .cta-box { padding:25px; display:block; }
+  .cta-box .btn { margin-top:20px; }
+  .stage-note { font-size:.74rem; bottom:0; }
+  .product-bottom h3 { font-size:1.1rem; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { transition:none!important; }
+}
 </style>
 </head>
+
 <body>
 <div class="topline"></div>
-<header><nav class="wrap" aria-label="Navegación principal">
-<a class="brand" href="#inicio"><span class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="12" width="5" height="8" rx="2"/><rect x="16" y="12" width="5" height="8" rx="2"/></svg></span><span>SONIQ<small>PERÚ S.A.C.</small></span></a>
-<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Menú ☰</button>
-<div class="navlinks" id="navlinks"><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#equipo">Equipo</a><a href="#inversion">Inversión</a></div>
-<a class="btn btn-primary nav-cta" href="#productos">Explorar catálogo ↗</a>
-</nav></header>
+
+<header>
+  <nav class="wrap" aria-label="Navegación principal">
+    <a class="brand" href="#inicio">
+      <span class="brandmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round">
+          <path d="M4 13v-2a8 8 0 0 1 16 0v2"/>
+          <rect x="3" y="12" width="5" height="8" rx="2"/>
+          <rect x="16" y="12" width="5" height="8" rx="2"/>
+        </svg>
+      </span>
+      <span>SONIQ<small>PERÚ S.A.C.</small></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+            aria-expanded="false" aria-controls="navlinks">
+      Menú ☰
+    </button>
+
+    <div class="navlinks" id="navlinks">
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#inversion">Inversión</a>
+    </div>
+
+    <a class="btn btn-primary nav-cta" href="#productos">
+      Explorar catálogo ↗
+    </a>
+  </nav>
+</header>
+
 <main>
-<section class="hero" id="inicio"><div class="wrap hero-grid"><div>
-<div class="eyebrow"><span class="dot"></span> Proyecto universitario · 2026</div>
-<h1>Tu mundo.<br><span>Tu música.</span></h1>
-<p class="lead">Conectamos tus momentos con el sonido que te acompaña. Descubre auriculares inalámbricos pensados para estudiar, trabajar, viajar y disfrutar cada canción.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#productos">Descubrir productos →</a><a class="btn btn-ghost" href="#nosotros">Conoce SONIQ</a></div>
-<div class="hero-stats"><div class="stat"><strong>S/ 1,800</strong><span>Capital inicial del proyecto</span></div><div class="stat"><strong>6 integrantes</strong><span>Un equipo, una idea</span></div><div class="stat"><strong>100% digital</strong><span>Promoción y catálogo online</span></div></div>
-</div><div class="product-stage" aria-label="Ilustración decorativa de auriculares inalámbricos"><div class="orb"></div><div class="product-card"><div class="tag">SONIQ · AUDIO SERIES</div><div class="earbuds"><div class="earbud"></div><div class="earbud right"></div></div><div class="product-bottom"><div><span style="color:var(--muted);font-size:.8rem">Sonido para tu día a día</span><h3>Wireless freedom</h3></div><div class="price">SONIQ</div></div></div><div class="stage-note">♫ Conecta con tu música.</div></div></div></section>
-<section id="beneficios"><div class="wrap"><div class="section-head reveal"><div class="kicker">¿Por qué SONIQ?</div><h2>Una experiencia simple.<br>Un sonido que te acompaña.</h2><p>Buscamos que elegir tus próximos auriculares sea fácil, transparente y conveniente.</p></div><div class="features">
-<article class="feature reveal"><div class="iconbox">＋</div><h3>Opciones para cada presupuesto</h3><p>Un catálogo inicial con modelos básicos, estándar y opciones con funciones adicionales.</p></article>
-<article class="feature reveal"><div class="iconbox">▤</div><h3>Atención cercana</h3><p>Te orientamos sobre características, compatibilidad y uso antes de decidir tu compra.</p></article>
-<article class="feature reveal"><div class="iconbox">✓</div><h3>Compra transparente</h3><p>Información clara sobre precios, condiciones de entrega y garantía disponible del proveedor.</p></article>
-</div></div></section>
-<section class="products" id="productos"><div class="wrap"><div class="section-head reveal"><div class="kicker">Catálogo inicial</div><h2>Encuentra tu ritmo.</h2><p>Tres categorías para comenzar. Los modelos y precios se validarán con cotizaciones de proveedores.</p></div><div class="product-grid">
-<article class="product reveal"><div class="product-art"><div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div></div><div class="product-content"><span class="product-label">Esencial</span><h3>Wireless Basic</h3><p>Una alternativa para escuchar música, estudiar y atender llamadas cotidianas.</p><div class="product-foot"><strong>S/ 35–45</strong><span class="pill">Precio referencial</span></div></div></article>
-<article class="product reveal"><div class="product-art" style="background:radial-gradient(circle at 50% 40%,#00aaff55,transparent 60%),#101f36"><div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div></div><div class="product-content"><span class="product-label">Equilibrado</span><h3>Wireless Plus</h3><p>Modelos con estuche de carga y autonomía que debe confirmarse según la ficha técnica.</p><div class="product-foot"><strong>S/ 50–65</strong><span class="pill">Precio referencial</span></div></div></article>
-<article class="product reveal"><div class="product-art" style="background:radial-gradient(circle at 50% 40%,#7a4dff45,transparent 60%),#101f36"><div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div></div><div class="product-content"><span class="product-label">Funciones extra</span><h3>Wireless Pro</h3><p>Opciones con funciones adicionales, dependiendo del modelo y del proveedor.</p><div class="product-foot"><strong>S/ 70–90</strong><span class="pill">Precio referencial</span></div></div></article>
-</div><p class="note">Nota: estos son rangos ilustrativos para el proyecto académico, no ofertas confirmadas ni inventario disponible.</p></div></section>
-<section id="nosotros"><div class="wrap"><div class="section-head reveal"><div class="kicker">Nuestra identidad</div><h2>Una idea que conecta.</h2><p>SONIQ nace como una propuesta de emprendimiento centrada en tecnología de audio accesible y atención responsable.</p></div><div class="about-grid">
-<article class="info-card reveal"><div class="big-icon">◉ Misión</div><h3>Acercar el audio a más personas</h3><p>Comercializar auriculares inalámbricos prácticos y accesibles, ofreciendo información clara, orientación y una atención confiable.</p><div class="values"><span>Servicio</span><span>Transparencia</span><span>Responsabilidad</span></div></article>
-<article class="info-card reveal"><div class="big-icon">✦ Visión</div><h3>Crecer con confianza</h3><p>Ser una marca reconocida localmente por su servicio, variedad de modelos y compromiso con la satisfacción del cliente.</p><div class="values"><span>Innovación</span><span>Trabajo en equipo</span><span>Mejora continua</span></div></article>
-</div></div></section>
-<section class="team" id="equipo"><div class="wrap"><div class="section-head reveal"><div class="kicker">Las personas detrás de la idea</div><h2>Conoce al equipo.</h2><p>Seis integrantes con responsabilidades propuestas para organizar el proyecto.</p></div><div class="team-grid">
-<article class="team-card reveal"><div class="avatar">01</div><div><h3>Lupacca Quispe Lucio Arturo</h3><p>Gerencia general</p></div></article>
-<article class="team-card reveal"><div class="avatar">02</div><div><h3>Patrick Vargas Euribe</h3><p>Administración financiera</p></div></article>
-<article class="team-card reveal"><div class="avatar">03</div><div><h3>Liñan Calderón Jhoneer</h3><p>Jefatura de compras</p></div></article>
-<article class="team-card reveal"><div class="avatar">04</div><div><h3>Figueroa Huaman Alexander</h3><p>Marketing y publicidad</p></div></article>
-<article class="team-card reveal"><div class="avatar">05</div><div><h3>Frecia Daniela Laura Canchos</h3><p>Jefatura de ventas</p></div></article>
-<article class="team-card reveal"><div class="avatar">06</div><div><h3>Nicole Luhanna Casavilca Alvarado</h3><p>Logística e inventario</p></div></article>
-</div></div></section>
-<section id="inversion"><div class="wrap"><div class="section-head reveal"><div class="kicker">Plan financiero</div><h2>Empezar con orden.</h2><p>El presupuesto inicial distribuye el capital entre inventario, operación y una pequeña reserva.</p></div><div class="finance-grid">
-<div class="capital reveal"><small>CAPITAL INICIAL TOTAL</small><div class="amount">S/ 1,800</div><p>6 integrantes × S/ 300 por integrante.</p></div>
-<div class="budget-list reveal"><div class="budget-row"><div class="budget-label"><span>Inventario inicial</span><span>S/ 1,100 · 61.1%</span></div><div class="track"><div class="fill" style="width:61.1%"></div></div></div><div class="budget-row"><div class="budget-label"><span>Operación y promoción</span><span>S/ 500 · 27.8%</span></div><div class="track"><div class="fill" style="width:27.8%"></div></div></div><div class="budget-row"><div class="budget-label"><span>Reserva</span><span>S/ 200 · 11.1%</span></div><div class="track"><div class="fill" style="width:11.1%"></div></div></div></div></div>
-<div class="projection"><div class="metric reveal"><span>Unidades vendidas al mes</span><strong>40</strong><em>Supuesto académico</em></div><div class="metric reveal"><span>Ventas brutas estimadas</span><strong>S/ 2,400</strong><em>40 × S/ 60</em></div><div class="metric reveal"><span>Margen bruto ilustrativo</span><strong>S/ 1,000</strong><em>Antes de gastos e impuestos</em></div></div>
-<p class="note">La proyección no garantiza ventas ni ganancias. El margen bruto se calcula con un costo supuesto de S/ 35 por unidad y no equivale a utilidad neta.</p></div></section>
-<section class="products" id="formalizacion"><div class="wrap"><div class="section-head reveal"><div class="kicker">Próximos pasos</div><h2>Del proyecto a una operación formal.</h2><p>Antes de vender, el equipo debe validar el mercado, los proveedores y los requisitos legales aplicables.</p></div><div class="steps">
-<article class="step reveal"><h3>Validar el producto</h3><p>Comparar proveedores, pedir muestras y verificar calidad, garantía, compatibilidad y costo de entrega.</p></article>
-<article class="step reveal"><h3>Organizar la empresa</h3><p>Confirmar disponibilidad del nombre, estructura societaria, aportes y trámites de constitución.</p></article>
-<article class="step reveal"><h3>Cumplir obligaciones</h3><p>Revisar RUC, régimen tributario, comprobantes y registros que correspondan con SUNAT.</p></article>
-</div><p class="note">La denominación “S.A.C.” y los trámites mostrados forman parte de la propuesta académica; la formalización real requiere verificar requisitos vigentes con SUNARP, SUNAT y asesoría competente.</p></div></section>
-<section class="cta"><div class="wrap"><div class="cta-box reveal"><div><div class="kicker">SONIQ Perú S.A.C.</div><h2>Conecta con tu música.</h2><p>Una propuesta universitaria con visión de crecimiento, orden financiero y atención cercana.</p></div><a class="btn btn-primary" href="#inicio">Volver al inicio ↑</a></div></div></section>
-</main>
-<footer><div class="wrap footer-row"><div><strong style="color:var(--white)">SONIQ Perú S.A.C.</strong><div>Proyecto universitario de emprendimiento · 2026</div></div><div>Conecta con tu música. ♫</div></div><div class="wrap disclaimer">Sitio demostrativo con fines académicos. Los precios, el presupuesto operativo y las proyecciones son supuestos de trabajo y deben validarse antes de usarse como información comercial real.</div></footer>
-<script>
-const menuBtn=document.getElementById('menuBtn'),navlinks=document.getElementById('navlinks');
-menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
-navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
-if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
-</script>
-</body></html>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Proyecto universitario · 2026</div>
+      <h1>Tu mundo.<br><span>Tu música.</span></h1>
+      <p class="lead">
+        Conectamos tus momentos con el sonido que te acompaña.
+        Descubre auriculares inalámbricos pensados para estudiar,
+        trabajar, viajar y disfrutar cada canción.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#productos">Descubrir productos →</a>
+        <a class="btn btn-ghost" href="#nosotros">Conoce SONIQ</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>S/ 1,800</strong><span>Capital inicial del proyecto</span></div>
+        <div class="stat"><strong>6 integrantes</strong><span>Un equipo, una idea</span></div>
+        <div class="stat"><strong>100% digital</strong><span>Promoción y catálogo online</span></div>
+      </div>
+    </div>
+
+    <div class="product-stage" aria-label="Ilustración de auriculares inalámbricos">
+      <div class="orb"></div>
+      <div class="product-card">
+        <div class="tag">SONIQ · AUDIO SERIES</div>
+        <div class="earbuds">
+          <div class="earbud"></div>
+          <div class="earbud right"></div>
+        </div>
+        <div class="product-bottom">
+          <div>
+            <span style="color:var(--muted);font-size:.8rem">Sonido para tu día a día</span>
+            <h3>Wireless freedom</h3>
+          </div>
+          <div class="price">SONIQ</div>
+        </div>
+      </div>
+      <div class="stage-note">♫ Conecta con tu música.</div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">¿Por qué SONIQ?</div>
+      <h2>Una experiencia simple.<br>Un sonido que te acompaña.</h2>
+      <p>Buscamos que elegir tus próximos auriculares sea fácil, transparente y conveniente.</p>
+    </div>
+
+    <div class="features">
+      <article class="feature reveal">
+        <div class="iconbox">＋</div>
+        <h3>Opciones para cada presupuesto</h3>
+        <p>Un catálogo inicial con modelos básicos, estándar y opciones con funciones adicionales.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="iconbox">▤</div>
+        <h3>Atención cercana</h3>
+        <p>Te orientamos sobre características, compatibilidad y uso antes de decidir tu compra.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="iconbox">✓</div>
+        <h3>Compra transparente</h3>
+        <p>Información clara sobre precios, condiciones de entrega y garantía disponible del proveedor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="productos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Catálogo inicial</div>
+      <h2>Encuentra tu ritmo.</h2>
+      <p>Tres categorías para comenzar. Los modelos y precios se validarán con cotizaciones de proveedores.</p>
+    </div>
+
+    <div class="product-grid">
+      <article class="product reveal">
+        <div class="product-art">
+          <div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div>
+        </div>
+        <div class="product-content">
+          <span class="product-label">Esencial</span>
+          <h3>Wireless Basic</h3>
+          <p>Una alternativa para escuchar música, estudiar y atender llamadas cotidianas.</p>
+          <div class="product-foot"><strong>S/ 35–45</strong><span class="pill">Precio referencial</span></div>
+        </div>
+      </article>
+
+      <article class="product reveal">
+        <div class="product-art" style="background:radial-gradient(circle at 50% 40%,#00aaff55,transparent 60%),#101f36">
+          <div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div>
+        </div>
+        <div class="product-content">
+          <span class="product-label">Equilibrado</span>
+          <h3>Wireless Plus</h3>
+          <p>Modelos con estuche de carga y autonomía que debe confirmarse según la ficha técnica.</p>
+          <div class="product-foot"><strong>S/ 50–65</strong><span class="pill">Precio referencial</span></div>
+        </div>
+      </article>
+
+      <article class="product reveal">
+        <div class="product-art" style="background:radial-gradient(circle at 50% 40%,#7a4dff45,transparent 60%),#101f36">
+          <div class="mini-buds"><div class="mini-bud"></div><div class="mini-bud" style="transform:rotate(22deg) scaleX(-1)"></div></div>
+        </div>
+        <div class="product-content">
+          <span class="product-label">Funciones extra</span>
+          <h3>Wireless Pro</h3>
+          <p>Opciones con funciones adicionales, dependiendo del modelo y del proveedor.</p>
+          <div class="product-foot"><strong>S/ 70–90</strong><span class="pill">Precio referencial</span></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="note">Nota: estos son rangos ilustrativos para el proyecto académico, no ofertas confirmadas ni inventario disponible.</p>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Nuestra identidad</div>
+      <h2>Una idea que conecta.</h2>
+      <p>SONIQ nace como una propuesta de emprendimiento centrada en tecnología de audio accesible y atención responsable.</p>
+    </div>
+
+    <div class="about-grid">
+      <article class="info-card reveal">
+        <div class="big-icon">◉ Misión</div>
+        <h3>Acercar el audio a más personas</h3>
+        <p>Comercializar auriculares inalámbricos prácticos y accesibles, ofreciendo información clara, orientación y una atención confiable.</p>
+        <div class="values"><span>Servicio</span><span>Transparencia</span><span>Responsabilidad</span></div>
+      </article>
+      <article class="info-card reveal">
+        <div class="big-icon">✦ Visión</div>
+        <h3>Crecer con confianza</h3>
